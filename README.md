@@ -4,25 +4,18 @@
 
 用于获取收款码图片和获取收款地址
 
+强烈推荐使用外部链接
+
 #### 配置文件
 
 ```yaml
-# 启用插件
-enable_plugins:
-    # ...
-    - pay-code
-
-# 插件配置
-plugins_config:
-    # ...
-    pay-code:
-        # 默认展示 可选 wechat(微信赞赏码) alipay(支付宝收款码) qq(QQ收款码) wechatpay(微信收款码)
-        default: alipay
-        # 收款码图片URL（为null则不展示）
-        alipay: null
-        wechat: null
-        qq: null
-        wechatpay: null
+# 默认展示 可选 wechat(微信赞赏码) alipay(支付宝收款码) qq(QQ收款码) wechatpay(微信收款码)
+default: alipay
+# 收款码图片URL（为null则不展示）
+alipay: null
+wechat: null
+qq: null
+wechatpay: null
 ```
 
 #### 接口
@@ -60,10 +53,11 @@ query 参数
 }
 ```
 
-如果 `isurl` 无值， `type` 又是一个正确或空的参数，则返回以下 html
+如果 `isurl` 无值， `type` 又是一个正确或空的参数，则返回以下 html （重定向）
 
 ```html
 <html>
-    <meta http-equiv="refresh" content="0;url=图片URL" />
+    <meta http-equiv="refresh" content="0" url=图片URL" />
 </html>
 ```
+
