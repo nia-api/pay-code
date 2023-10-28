@@ -1,11 +1,9 @@
-import config from './../../../utils/config'
+import { config } from './../utils/config'
 
-const payCodeConfig = config.plugins_config['pay-code']
-
-export const getImg = (type = payCodeConfig.default) => {
+export const getImg = (type = config.default) => {
     if (type == 'alipay' || type == 'wechatpay' || type == 'qq' || type == 'wechat') {
         return {
-            img: payCodeConfig[type],
+            img: config[type],
             type
         }
     }
